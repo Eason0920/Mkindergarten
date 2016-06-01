@@ -1,0 +1,75 @@
+﻿<div id="pagewrap">
+    <h1>萌學園</h1>
+    <div ng-controller="homeCtrl">
+        <auto-hide-top-bar id="top-bar">
+            <div id="topper-width">
+                <div id="topper-logo" ng-click="menuClick('/')">
+                    <a>
+                        <img src="/Images/topper-logo_01.png">
+                    </a>
+                </div>
+                <div id="topper-right">
+                    <div class="pc-only" style="padding-top:40px; padding-right:10px;">
+                        <form name="form" id="form">
+                            <select name="jumpMenu" size="1" id="jumpMenu" class="shSelect"
+                                    onchange="if (this.options[this.selectedIndex].value.length > 0) { window.open(this.options[this.selectedIndex].value) }">
+                                <option value="">相關連結</option>
+                                <option value="https://www.facebook.com/mkindergarten/">萌學園粉絲團</option>
+                                <option value="http://yoyokids.ebc.net.tw/">東森YOYO幼兒園</option>
+                                <option value="http://yoyotv.ebc.net.tw/">東森YOYO台</option>
+                                <option value="http://www.ebc.net.tw/">東森電視台</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="mobile-only">
+                        <div class="mobilenav">
+                            <ul>
+                                <li><a href="/intro"><span>什麼是</span><span>萌學園</span></a></li>
+                                <li><a href="/plan"><span>萌學園</span><span>幼兒園</span></a></li>
+                                <li><a href="/location"><span>據點</span><span>分佈</span></a></li>
+                                <li><a href="/recruit"><span>人才</span><span>招募</span></a></li>
+                            </ul>
+                        </div>
+
+                        <mobile-nav-menu>
+                            <div class="hamburger">
+                                <div class="menui top-menu"></div>
+                                <div class="menui mid-menu"></div>
+                                <div class="menui bottom-menu"></div>
+                            </div>
+                        </mobile-nav-menu>
+                    </div>
+                </div>
+                <div class="iamhere"></div>
+            </div>
+        </auto-hide-top-bar>
+        <!--上方MENU結束-->
+
+        <div class="menu_float">
+            <ul>
+                <li ng-click="menuClick('/intro')" ng-style="{'background-color': ((currentUrlPath === '/intro') ? '#fff100' : '#fff')}">
+                    <a ng-href="{{'/intro'}}"><span>什麼是</span><span>萌學園</span></a>
+                </li>
+                <li ng-click="menuClick('/plan')" ng-style="{'background-color': ((currentUrlPath === '/plan') ? '#fff100' : '#fff')}">
+                    <a ng-href="{{'/plan'}}"><span>萌學園</span><span>幼兒園</span></a>
+                </li>
+                <li ng-click="menuClick('/location')" ng-style="{'background-color': ((currentUrlPath === '/location') ? '#fff100' : '#fff')}">
+                    <a ng-href="{{'/location'}}"><span>據點</span><span>分佈</span></a>
+                </li>
+                <li ng-click="menuClick('/recruit')" ng-style="{'background-color': ((currentUrlPath.indexOf('/recruit') > -1) ? '#fff100' : '#fff')}">
+                    <a ng-href="{{'/recruit'}}"><span>人才</span><span>招募</span></a>
+                </li>
+            </ul>
+        </div>
+        <!--右邊浮動MENU結束-->
+        <!--頁面內容 begin-->
+        <div ng-view class="anim-up-to-down"></div>
+        <!--頁面內容 end-->
+    </div>
+</div>
+
+<!-- gotop begin -->
+<div id="gotop">
+    <a href="#" class="scrollup">Scroll</a>
+</div>
+<!-- gotop end -->

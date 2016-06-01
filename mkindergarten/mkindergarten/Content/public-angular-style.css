@@ -1,0 +1,378 @@
+﻿/*#region *** 讓ng-bind{{}}初始時隱藏 *** */
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+/*#endregion */
+
+/*#region *** anim-left-to-right 左入右出淡入淡出進入離開效果 *** */
+
+.anim-left-to-right.ng-enter, .anim-left-to-right.ng-leave {
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    position: absolute;
+}
+
+.anim-left-to-right.ng-enter {
+    opacity: 0;
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    z-index: 101;
+}
+
+    .anim-left-to-right.ng-enter.ng-enter-active {
+        opacity: 1;
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+.anim-left-to-right.ng-leave {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    z-index: 100;
+}
+
+    .anim-left-to-right.ng-leave.ng-leave-active {
+        opacity: 0;
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+/*#endregion */
+
+/*#region *** anim-up-to-down 上入下出淡入淡出進入離開效果 *** */
+
+.anim-up-to-down.ng-enter, .anim-up-to-down.ng-leave {
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.anim-up-to-down.ng-enter {
+    opacity: 0;
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    /*z-index: 101;*/
+}
+
+    .anim-up-to-down.ng-enter.ng-enter-active {
+        opacity: 1;
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+.anim-up-to-down.ng-leave {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    /*z-index: 100;*/
+}
+
+    .anim-up-to-down.ng-leave.ng-leave-active {
+        opacity: 0;
+        -moz-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        -o-transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+
+/*#endregion */
+
+/*#region *** anim-left-to-right-fade-leave 由左至右淡入進入，直接淡出離開效果 *** */
+
+.anim-left-to-right-fade-leave.ng-enter, .anim-left-to-right-fade-leave.ng-leave {
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    position: absolute;
+}
+
+.anim-left-to-right-fade-leave.ng-enter {
+    opacity: 0;
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    z-index: 101;
+}
+
+    .anim-left-to-right-fade-leave.ng-enter.ng-enter-active {
+        opacity: 1;
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+.anim-left-to-right-fade-leave.ng-leave {
+    width: 100%;
+    opacity: 1;
+    z-index: 0;
+}
+
+    .anim-left-to-right-fade-leave.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+/*#endregion */
+
+/*#region *** anim-slide-down 進入效果 *** */
+
+.anim-slide-down.ng-enter, .anim-slide-down.ng-leave {
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.anim-slide-down.ng-enter {
+    max-height: 0;
+    opacity: 0;
+}
+
+    .anim-slide-down.ng-enter.ng-enter-active {
+        max-height: 500px;
+        overflow-y: hidden;
+        opacity: 1;
+    }
+
+.anim-slide-down.ng-leave {
+    opacity: 1;
+}
+
+    .anim-slide-down.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+/*#endregion */
+
+/*#region *** anim-repeat-hor-move 水平移動滑入效果 *** */
+
+.anim-repeat-hor-move.ng-move {
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    position: absolute;
+    opacity: 0;
+    -moz-transform: translateX(-20%);
+    -ms-transform: translateX(-20%);
+    -o-transform: translateX(-20%);
+    -webkit-transform: translateX(-20%);
+    transform: translateX(-20%);
+}
+
+    .anim-repeat-hor-move.ng-move.ng-move-active {
+        opacity: 1;
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+/*#endregion */
+
+/*#region *** anim-repeat-fade-move 淡入淡出移動效果 *** */
+
+.anim-repeat-fade-move.ng-move {
+    -moz-transition: all 1.2s ease-in-out;
+    -o-transition: all 1.2s ease-in-out;
+    -webkit-transition: all 1.2s ease-in-out;
+    transition: all 1.2s ease-in-out;
+    opacity: 0;
+}
+
+    .anim-repeat-fade-move.ng-move.ng-move-active {
+        opacity: 1;
+    }
+
+/*#endregion */
+
+/*#region *** anim-fade-enter-leave 淡入淡出進入離開效果 *** */
+
+.anim-fade-enter-leave {
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+    .anim-fade-enter-leave.ng-enter, .anim-fade-enter-leave.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+        .anim-fade-enter-leave.ng-enter.ng-enter-active, .anim-fade-enter-leave.ng-leave {
+            opacity: 1;
+        }
+
+/*#endregion */
+
+/*#region *** anim-repeat-hor-move 背景換色效果 *** */
+
+.anim-repeat-background-color-move.ng-move {
+    -moz-transition: all 1.5s ease-in-out;
+    -o-transition: all 1.5s ease-in-out;
+    -webkit-transition: all 1.5s ease-in-out;
+    transition: all 1.5s ease-in-out;
+    background-color: #ffb2b2 !important;
+    font-weight: bold;
+}
+
+    .anim-repeat-background-color-move.ng-move.ng-move-active {
+        background-color: transparent !important;
+        font-weight: normal;
+    }
+
+/*#endregion */
+
+/*#region *** anim-repeat-margin-move margin偏離移動滑入效果 *** */
+
+.anim-repeat-margin-move.ng-move {
+    -moz-transition: 0.6s linear all;
+    -o-transition: 0.6s linear all;
+    -webkit-transition: 0.6s linear all;
+    transition: 0.6s linear all;
+    margin-left: -5%;
+    opacity: 0;
+}
+
+    .anim-repeat-margin-move.ng-move.ng-move-active {
+        margin-left: 0;
+        opacity: 1;
+    }
+
+/*#endregion */
+
+/*#region *** anim-repeat-margin-enter margin偏離進入效果 *** */
+
+.anim-repeat-margin-enter.ng-enter {
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    margin-left: -20px;
+}
+
+    .anim-repeat-margin-enter.ng-enter.ng-enter-active {
+        margin-left: 0;
+    }
+
+/*#endregion */
+
+/*#region *** anim-leave-up 向上離開效果 *** */
+
+.anim-leave-up.ng-leave {
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    z-index: 100;
+}
+
+    .anim-leave-up.ng-leave.ng-leave-active {
+        top: -100%;
+        opacity: 0;
+    }
+
+/*#endregion */
+
+/*#region *** anim-leave-down 向下離開效果 *** */
+
+.anim-leave-down.ng-leave {
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    opacity: 1;
+    z-index: 100;
+}
+
+    .anim-leave-down.ng-leave.ng-leave-active {
+        bottom: -100%;
+        opacity: 0;
+    }
+
+/*#endregion */
+
+/*#region *** anim-enter-up 向上出現效果*** */
+
+.anim-enter-up.ng-enter {
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    position: absolute;
+    bottom: -100%;
+    opacity: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+    .anim-enter-up.ng-enter.ng-enter-active {
+        bottom: 0;
+        opacity: 1;
+    }
+
+/*#endregion */
+
+/*#region *** anim-enter-down 向下出現效果 *** */
+
+.anim-enter-down.ng-enter {
+    -moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.1s;
+    position: absolute;
+    top: -50%;
+    opacity: 0;
+    z-index: 100;
+}
+
+    .anim-enter-down.ng-enter.ng-enter-active {
+        top: 0;
+        opacity: 1;
+    }
+
+/*#endregion */

@@ -1,0 +1,55 @@
+﻿<section class="content">
+    <!--主題開始-->
+    <div class="title"><img src="/Images/location_01.png"></div>
+    <!--主題結束-->
+    <div class="map">
+        <!-- Responsive iFrame -->
+        <!--無法套用原 CSS 類別至地圖，手機版會有問題，先註解-->
+        <!--<div class="Flexible-container">-->
+        <div>
+            <ui-gmap-google-map center="gMap.center" zoom="gMap.zoom" ng-if="gMap.center">
+                <ui-gmap-markers models="markers"
+                                 coords="'self'"
+                                 fit="((markers.length > 1) ? true : false)"
+                                 events="markers.events">
+                    <ui-gmap-windows show="'show'" templateurl="'template_html'" templateparameter="'self'"></ui-gmap-windows>
+                </ui-gmap-markers>
+            </ui-gmap-google-map>
+        </div>
+    </div>
+    <div class="map_select">
+        <div class="yellow_select_area">
+            <select class="shSelect" ng-model="citySelectId" ng-options="city.id as (city.name + '﹝' + city.company_count + '﹞') for city in citysWithCompanyCount"
+                    ng-change="cityChange()" style="height: 35px;"></select>
+        </div>
+    </div>
+    <div class="iamhere"></div>
+</section>
+<app-footer></app-footer>
+
+<!--園所資訊視窗內容範本 begin-->
+<script type="text/ng-template" id="map-window.html">
+    <div class="web-font">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div ng-show="parameter.intro_image.length > 0">
+                            <img ng-src="{{parameter.intro_image}}" ng-style="{width: ((parameter.is_mobile) ? 120 : 150) + 'px'}" />
+                        </div>
+                        <span style="margin-right: 10px;">{{parameter.name}}</span><br ng-show="!parameter.is_mobile" /><!--電腦版才需要電話號碼換行-->
+                        <span>{{parameter.tel}}</span>
+                        <div>{{parameter.address}}</div>
+                        <div ng-show="parameter.is_mobile">
+                            <a ng-href="{{parameter.link}}" target="_blank" style="text-decoration: underline;">前往瀏覽《{{parameter.name}}》</a>
+                        </div>
+                        <div style="color: #fe3b2c;" ng-show="!parameter.is_mobile">
+                            <div>※ 點擊標記瀏覽《{{parameter.name}}》</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>
+<!--園所資訊視窗內容範本 end-->

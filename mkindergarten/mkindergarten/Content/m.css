@@ -1,0 +1,467 @@
+/* Import other css */
+@import url('reset.css');
+
+
+
+body {
+	font-size: 1em ;
+	/*font-family:"cwTeXHei", "微軟正黑體", "Microsoft JhengHei", "新細明體", Arial, Helvetica, sans-serif;*/
+	/*font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體",Arial, Helvetica, sans-serif;*/
+	background-color:#eee;
+	color: #000;
+	margin:0 auto;
+	line-height:1.5em;
+	
+}
+a {text-decoration: none;cursor:pointer;}
+ul, li {padding:0;margin:0;list-style-type:none;}
+
+a:hover {text-decoration: none;}
+h1 {display: none;}
+h2 {font-size:1em;padding:0; margin:0; font-weight:100;}
+h3 {
+	font-size:1.3em;
+	padding:10px 0;
+	margin:0;
+	color:#000;
+}
+h4 {font-size:1.2em;}
+.blue_text{color:#0068b6;}
+.red_text{color:#e50012;}
+.iamhere{clear:both;}
+/*图片的自适应（fluid image）*/
+
+/*这行代码对于大多数嵌入网页的图片+视频有效，所以可以写成*/
+img, object { max-width: 100%; border:0;}
+
+/*老版本的IE不支持max-width，所以只好写成*/
+img { width: 100%;border:0;}
+img { -ms-interpolation-mode: bicubic; border:0;}
+/************************************************************************************
+STRUCTURE 結構
+*************************************************************************************/
+
+#pagewrap {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+/*---------------------------------------------------------------*/
+#top-bar{
+	 width:100%;
+	 height:60px;
+	 background:#ffa919;
+	 position:fixed;
+	 top:-85px;
+	 z-index:2;
+	  
+}
+#topper-width{width:100%;margin: 0 auto;
+	 text-align:center;}
+#topper-logo{float:left;}
+#topper-logo img{width:80%;}
+
+#topper-right{float:right;}
+
+.pc-only{display:none;}
+.mobile-only{display:block;}
+
+/*---------------------------Hamburger ------------------------------------*/
+
+.top-animate {
+  background: #ffffff !important;
+  top: 13px !important;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.mid-animate {
+  opacity: 0;
+}
+
+.bottom-animate {
+  background: #ffffff !important;
+  top: 13px !important;
+  -webkit-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+}
+
+.top-menu {
+  top: 10px;
+  width: 35px;
+  height: 2px;
+  border-radius: 10px;
+   background: #ffffff !important;
+}
+
+.mid-menu {
+  top: 18px;
+  width: 35px;
+  height: 2px;
+  border-radius: 10px;
+   background: #ffffff !important;
+}
+
+.bottom-menu {
+  top: 26px;
+  width: 35px;
+  height: 2px;
+  border-radius: 10px;
+  background: #ffffff !important;
+}
+
+.menui {
+  background: orange;
+  transition: 0.6s ease;
+  transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
+  margin-top: 10px;
+  position: absolute;
+}
+
+.icon {
+  z-index: 999;
+  position: fixed;
+  display: block;
+  padding: 15px;
+  height: 32px;
+  width: 32px;
+  margin: 0px;
+  top: 0;
+  right: 0;
+}
+
+.mobilenav {
+  font-family: inherit;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: orange;
+  padding-top: 100px;
+}
+
+.mobilenav li {
+  list-style-type: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.mobilenav li a {
+  font-size: 2em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  width: 100%;
+}
+
+.mobilenav li a:hover{color: #000;}
+
+.mobilenav li:first-child {
+  margin-top: 60px;
+}
+
+/* select */
+.shSelect{
+	width:200px;
+	font-size: 18px ;
+	line-height:20px;
+	padding: 4px 6px;
+	color: #555555;
+	vertical-align: middle;
+	
+	height: 30px;
+	/* In IE7, the height of the select element cannot be changed by height, only font-size */
+	*margin-top: 4px;
+	/* For IE7, add top margin to align select with labels */
+	line-height: 30px;
+	
+	/* select 邊框拿掉 */
+	border: 1px solid #cccccc;
+	background-color: #ffffff;
+	
+	/* 圓框 */
+	-webkit-border-top-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-radius: 4px;
+	-webkit-background-clip: padding-box;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	border-radius: 4px;
+	background-clip: padding-box;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 0;
+	-moz-border-radius-bottomleft: 0;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius: 4px;
+	-moz-background-clip: padding;
+	font-family:"cwTeXHei", "微軟正黑體", "Microsoft JhengHei", "新細明體", Arial, Helvetica, sans-serif;
+}
+
+/*---------------------------------------------------------------*/
+.menu_float{
+	position: absolute;
+	position:fixed;
+	top:200px;
+	right:0px;
+	z-index:2;
+	display:none;
+}
+.menu_float ul li{
+	font-size: 1.25em ;
+	width: 60px;
+	height: 50px;
+	padding:25px 20px;
+	background-color:#fff;
+	margin-bottom:1px;
+	text-align: center;
+	cursor:pointer;
+}
+
+.menu_float ul li span{
+	display:block;
+}
+.menu_float ul li a{
+	color:#000;
+}
+.menu_float ul li:hover{
+	background-color:#fff100;
+}
+/*---------------------------------------------------------------*/
+.welcome {
+	position: relative;
+  background-image:url(../images/bglayout.jpg);
+  background-color:#2e2665;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  height: calc(100vh);
+}
+.logo{
+	position: absolute;
+    width: 100%;
+    top: 30%;
+}
+.logo img{width:auto;}
+#party_avatar1 {
+	position: relative;
+	margin: 0 auto;
+	width: 66px;
+	height: 66px;
+	background: transparent url(../images/Scorllbtn.png) 0 0 no-repeat;
+}
+
+/*-----------------------------banner-flickity----------------------------------*/
+.banner{
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 50px;
+	padding-top: 100px;
+	padding-bottom: 150px;
+	text-align: center;
+	
+}
+
+.banner-flickity {
+	width: 100%;
+	
+	margin: 0 auto;
+	position: relative;
+	
+}
+
+/** {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}*/
+
+
+.gallery {
+  background: #eee;
+  margin: 0 ; /* space for prev/next buttons */
+}
+
+.gallery-cell {
+  width: 100%;
+  /*height: 200px;*/
+  margin-right: 10px;
+  background: #eee;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+/*.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}*/
+/*-----------------------------源起----------------------------------*/
+.content{
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 50px;
+	padding-bottom: 100px;
+	text-align: justify;
+    text-justify:inter-ideograph;
+	
+}
+.title{
+	width:100%;
+	margin:0 auto;
+	border-bottom:#000 1px dashed;
+	padding-top:10px;
+	margin-bottom:30px;
+	text-align:left;
+}
+.title img {width: auto;}
+
+.orange_radiusarea{
+	width:70%;
+	display:block;
+	border-radius: 50px;
+    background-color: #ffa919;
+    color:#FFFFFF;
+    margin:30px 0 10px 0;
+    padding:5px 20px;
+}
+.fix-height180, .fix-height150{padding:0 10px;}
+
+.yellow_select_area{
+	margin-top:30px;
+	padding:10px;
+	background-color: #fff100;
+}
+.white_select_area{
+	padding:10px;
+	background-color: #fff;
+}
+.white_select_area a{
+	color: #000;
+	padding:5px;
+	display:block;
+	margin:5px 0;
+	/*border:solid 1px #fff100;*/
+}
+.white_select_area a:hover{
+	background-color: #fff100;
+}
+	
+/*-----------------------------footer----------------------------------*/
+.footer{
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	padding: 20px 0 10px 0;
+	text-align: center;
+	background:#ffa919;
+}
+.footer img {width: auto;}
+
+/*---------------------------------------------------------------*/
+
+/*Smooth Page Scroll to Top */
+.scrollup {
+	width: 40px;
+	height: 50px;
+	text-indent: -9999px;
+	opacity: 0.85;
+	position: fixed;
+	bottom: 0px;
+	right: 5%;
+	display: none;
+	background: url(../images/icon_top.png) no-repeat center top #000;
+	z-index:2;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+/*------------------------------Flexible iFrame---------------------------------*/
+
+
+.Flexible-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.Flexible-container iframe,   
+.Flexible-container object,  
+.Flexible-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*------------------------------recruit iFrame---------------------------------*/
+
+
+
+/*list1 */
+
+.c_title1 {width:100%; background-color:#ffa919;}
+.c_list1 {width: 100%; background-color: white;}
+
+.list11 { padding: 10px; border: 1px solid #959595; text-align: center; letter-spacing: 0.1em; }
+.list22 { padding: 10px; border: 1px solid #959595; border-top: 1px solid #fff; text-align: left; letter-spacing: 0.1em; }
+.list33 { padding: 10px; border: 1px solid #959595; border-top: 1px solid #fff; text-align: center; letter-spacing: 0.1em; }
+.list22 ol li{ list-style-type:decimal;}
+
+/*list1---end */
+
+
+
+
+
+/*list2 */
+
+.recruitment { padding-left:10px; padding-right:10px; padding-top: 10px;}
+
+#web {background-color : transparent; /*背景色為透明*/}
+
+.box {width:100%; position:relative;}
+
+
+
+.clear{ clear:both;}
+.bbk { padding-bottom:20px;}
+
+
+.block { 
+    width:100%; 
+	position:relative;    
+	float: left;
+}
+.c_title {width:100%; float:left;background-color:#ffa919;}
+.title1 { padding: 10px; color: #FFF; text-align: center; border: 1px solid #959595;}
+
+.c_list {width: 100%; background-color: white;}
+.list1 { padding: 10px; border: 1px solid #959595; text-align: center; letter-spacing: 0.1em; }
+.list2 { padding: 10px; border: 1px solid #959595; border-top: 1px solid #fff; text-align: center; letter-spacing: 0.1em; }
+.list3 { padding: 10px; border: 1px solid #959595; border-top: 1px solid #fff; text-align: center; letter-spacing: 0.1em; }
+.list4 { padding: 10px; border: 1px solid #959595; border-top: 1px solid #fff; text-align: center; letter-spacing: 0.1em; }
+
+.link1 a{color:#000; text-decoration:none;}
+.link1:hover{background-color:#fff100;}
+.c_list a {color:#000;}
+
+/*list2---end */
+

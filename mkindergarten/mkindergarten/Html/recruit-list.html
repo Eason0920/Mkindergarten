@@ -1,0 +1,94 @@
+﻿<section class="content">
+
+    <!--主題開始-->
+    <div class="title"><img src="/Images/recruit_01.png"></div>
+    <div id="web">
+        <div class="recruitment">
+            <div class="yellowline">
+                <!--mobile-->
+                <div class="block close2">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <div class="c_title">
+                                    <div class="title1">{{recruitJobName}}</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="block boxx close2" ng-repeat="com in recruitJobCompanys">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <div class="c_list">
+                                    <div class="list1">{{com.company_name}}</div>
+                                </div>
+                                <div class="c_list">
+                                    <div class="list2">{{getCityNameById(com.company_city_id) + com.company_add}}</div>
+                                </div>
+                                <div class="c_list">
+                                    <div class="list3">{{com.company_tel}}</div>
+                                </div>
+                                <div class="c_list">
+                                    <a ng-href="{{com.company_link}}" target="_blank">
+                                        <div class="list4 link1">查看分園>></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--mobile-end-->
+                <!--pc-->
+                <div class="block close">
+                    <ul>
+                        <li>
+                            <div class="box" ng-if="recruitJobCompanys.length > 0">
+                                <div class="c_title"><div class="title1">職缺</div></div>
+                                <div class="c_title"><div class="title2">園所</div></div>
+                                <div class="c_title"><div class="title3">地址</div></div>
+                                <div class="c_title"><div class="title4">電話</div></div>
+                            </div>
+                            <div class="box" ng-if="recruitJobCompanys.length === 0">
+                                <div class="c_title" style="width: 100%; text-align: center;">
+                                    <div class="title1" style="text-align: center;">{{recruitJobName}}</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="block boxx close link2" ng-repeat-start="com in recruitJobCompanys">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <a ng-href="{{com.company_link}}" target="_blank">
+                                    <div class="c_list">
+                                        <div class="list1">{{com.job_kind_name}}</div>
+                                    </div>
+                                    <div class="c_list">
+                                        <div class="list2">{{com.company_name}}</div>
+                                    </div>
+                                    <div class="c_list">
+                                        <div class="list3">{{getCityNameById(com.company_city_id) + com.company_add}}</div>
+                                    </div>
+                                    <div class="c_list">
+                                        <div class="list4">{{com.company_tel}}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <hr class="hr close" />
+                <div class="clear" ng-repeat-end></div>
+                <!--pc-end-->
+                <div ng-style="{'padding-bottom': ((recruitJobCompanys.length > 0) ? '20px' : '70px')}"></div>
+            </div>
+        </div>
+    </div>
+    <!--主題結束-->
+</section>
+<app-footer></app-footer>

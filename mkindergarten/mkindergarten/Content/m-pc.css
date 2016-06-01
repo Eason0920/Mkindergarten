@@ -1,0 +1,226 @@
+
+
+/*字体也不能使用绝对大小（px），而只能使用相对大小（em）。字体大小是页面默认大小的100%，即16像素。*/
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/*句式只在viewport 寬度不小於500px才生效*/
+@media screen and (min-width: 500px) {
+	.welcome {height: calc(100vh);}
+
+}
+
+/*句式只在viewport 寬度不小於600px才生效*/
+@media screen and (min-width: 600px) {
+	
+
+     .content{font-size: 1.2em ;}
+
+	
+}
+
+/*句式只在viewport 寬度不小於750px才生效*/
+@media screen and (min-width: 750px) {
+    h3 {font-size:1.15em;}
+	.half{width: 50%;}
+	.left{float:left;}
+	.right{float:right;}
+	
+	.fix-height180{height:180px; padding:0 25px 0 10px;}
+	.fix-height150{height:150px; padding:0 25px 0 10px;}
+
+	
+	
+/*-----------------------------banner-flickity----------------------------------*/
+.banner-flickity {width: 750px;}
+
+	
+
+}
+
+/*句式只在viewport 寬度不小於960px才生效*/
+@media screen and (min-width: 960px) {
+
+	
+#topper-width{width:900px;}
+#top-bar{height:80px;}
+#topper-logo img{width:auto;}
+	.pc-only{display:block;}
+	.mobile-only{display:none;}
+	
+	.menu_float{display:block;}
+	h4 {font-size:1em;}
+	.content{width:900px;font-size: 1.4em ;line-height:1.5em;}
+	.content p{font-weight:lighter;}
+	.title{
+	width:900px;
+	padding-top:30px;
+	margin-bottom:30px;
+	}
+	.orange_radiusarea{	width:50%;}
+	
+	.map{width:680px;float:right;}
+	.map_select{width:220px;float:left;}
+	
+	.yellow_select_area{margin-top:0;}
+	.white_select_area{
+		height:340px; 
+		font-size: 0.8em ;
+		line-height:1.2em;
+		overflow-x:hidden;　
+		overflow-y:auto;
+}
+/*-----------------------------banner-flickity----------------------------------*/
+.banner-flickity {width: 900px;}
+ .gallery {
+  margin: 0 60px; /* space for prev/next buttons */
+}
+/* smaller, dark, rounded square */
+.flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: #333;
+}
+.flickity-prev-next-button:hover {
+  background: #F90;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+/* position outside */
+.flickity-prev-next-button.previous {
+  left: -40px;
+}
+.flickity-prev-next-button.next {
+  right: -40px;
+}
+
+	
+}
+
+/*句式只在viewport 寬度不小於1380px才生效*/
+@media screen and (min-width: 1380px){
+	#topper-width{width:1200px;}
+	.content{width:1200px;font-size: 1.5em ;line-height:1.6em;}
+	
+	.title{width:1200px;}
+	.map{width:980px;float:left;}
+	.map_select{width:220px;float:right;}
+	
+	.yellow_select_area{margin-top:0;}
+	.white_select_area{height:505px;}
+/*-----------------------------banner-flickity----------------------------------*/
+.banner-flickity {width: 1200px;}
+ 
+
+
+}
+
+	
+
+
+
+
+@media screen and (min-width: 320px) {
+	.box {margin-top:10px;}
+	
+}
+@media screen and (max-width: 767px) {
+.recruitment {/*background-color: white;*/padding-left: 0px; padding-right: 0px; padding-top: 0px;}
+.close {display:none;}
+.title1 { font-size:1.2em;} 
+.title11 { font-size:1.2em;} 
+.list22 ol li {margin-left:30px;}
+.title11 { padding: 10px; color: #FFF; text-align: center; border: 1px solid #959595;}
+.boxx {margin-top:10px;}
+}
+@media screen and (min-width: 768px) {
+
+/*list2 */
+
+.close2 {display:none;}
+
+.recruitment { border-radius: 25px;/*border:1px solid #000;*/ padding:20px;	background-color: white;}
+
+.yellowline { border-radius: 25px; border:3px dashed #ffa919; padding:20px;}
+
+.block { width:100%; position:relative; float: left; padding-top: 3px; padding-bottom: 3px;}
+.c_title {width:25%; float:left;}
+.title1 { padding:5px; padding-left:20px; color:#FFF; text-align:left; border:0px solid #fff;}
+.title2 { padding:5px; padding-left:20px; color:#FFF;}
+.title3 { padding:5px; padding-left:20px; color:#FFF;}
+.title4 { padding:5px; padding-left:20px; color:#FFF;}
+
+.c_list {width:25%; float:left;background-color:transparent; cursor:pointer;}
+
+.list1 {padding:5px; padding-left:20px; border: 0px solid #fff; text-align:left;}
+.list2 {padding:5px; padding-left:20px; border: 0px solid #fff; text-align:left;}
+.list3 {padding:5px; padding-left:20px; border: 0px solid #fff; text-align:left;}
+.list4 {padding:5px; padding-left:20px; border: 0px solid #fff;width: 90%; text-align:left;letter-spacing: 0.01em;}
+
+.hr { border-bottom: 0px solid #656464; width:99.9%; margin:0;}
+
+
+.link2 a{color:#000; text-decoration:none;}
+.link2:hover{background-color:#fff100;}
+
+/*list2---end */
+
+/*list1 */
+
+.c_title1 {width:20%; float:left;}
+.c_title2 {width:60%; float:left;}
+.c_title3 {width:20%; float:left;}
+.title11 { padding: 20px; color: #fff; text-align: left; background-color:#ffa919;}
+.title22 { padding: 20px; color: #fff; text-align: left; background-color:#ffa919;}
+.title33 { padding: 20px; color: #ffa919; text-align: left; background-color:#ffa919;}
+
+.c_list1 {width:20%; float:left;background-color:transparent; cursor:pointer;}
+.c_list2 {width:60%; float:left;background-color:transparent; cursor:pointer;}
+.c_list3 {width:20%; float:left;background-color:transparent; cursor:pointer;}
+.list11 {padding:5px; padding-left:20px; border: 0px solid #fff; text-align:left;}
+.list22 {padding:5px; padding-left:20px; border: 0px solid #fff; text-align:left; text-align: justify; -ms-text-justify: inter-ideograph;}
+.list33 {padding:5px; padding-left:10px; border: 0px solid #fff; text-align:left; letter-spacing: 0.001em;}
+
+.list22 ol li {margin-left:35px;}
+
+/*list1---end */
+}
+
+@media screen and (min-width: 960px) {
+
+/*list1 */
+
+.list33 {padding-right:20px; text-align:right;}
+
+/*list1---end */
+}
+@media screen and (min-width: 1380px) {
+
+/*list2 */
+
+.list4 {letter-spacing: 0.05em;}
+
+/*list2---end */
+
+
+
+}
+
+@media screen and (min-width: 1380px) {
+
+/*list2 */
+
+.list3 {padding-left: 0px;}
+.title3 {padding-left:0px;}
+.list4 {padding-left: 65px;}
+.title4 {padding: 5px; padding-left: 65px; color: #FFF;}
+
+/*list2---end */
+}

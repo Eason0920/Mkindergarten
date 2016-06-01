@@ -1,0 +1,68 @@
+﻿<section class="content">
+    <!--主題開始-->
+    <div class="title"><img src="/Images/recruit_01.png" /></div>
+    <div id="web">
+        <div class="recruitment">
+            <div class="yellowline">
+                <!--mobile-->
+                <div class="block boxx close2" ng-repeat-start="job in recruitJobs track by job.id">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <div class="c_title1">
+                                    <div class="title11">{{job.name}}</div>
+                                </div>
+                                <div class="c_list1">
+                                    <div class="list22" ng-bind-html="job.desc_html"></div>
+                                </div>
+                                <div class="c_list1 link1">
+                                    <a ng-href="{{'/recruit/' + job.id}}">
+                                        <div class="list33">查看職缺>></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear" ng-repeat-end></div>
+                <!--mobile-end-->
+                <!--pc-->
+                <div class="block close">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <div class="c_title1"><div class="title11">職缺</div></div>
+                                <div class="c_title2"><div class="title22">條件</div></div>
+                                <div class="c_title3"><div class="title33">連結</div></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="block boxx close link2" ng-repeat-start="job in recruitJobs track by job.id">
+                    <ul>
+                        <li>
+                            <a ng-href="{{'/recruit/' + job.id}}">
+                                <div class="box">
+                                    <div class="c_list1">
+                                        <div class="list11">{{job.name}}</div>
+                                    </div>
+                                    <div class="c_list2">
+                                        <div class="list22" ng-bind-html="job.desc_html"></div>
+                                    </div>
+                                    <div class="c_list3">
+                                        <div class="list33">查看職缺>></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <hr class="hr close" ng-repeat-end />
+                <!--pc-end-->
+            </div>
+        </div>
+    </div>
+    <!--主題結束-->
+</section>
+<app-footer></app-footer>

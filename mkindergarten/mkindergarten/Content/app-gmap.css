@@ -1,0 +1,9 @@
+﻿.angular-google-map-container {
+    height: 490px;
+}
+
+@media screen and (max-width: 960px) {
+    .angular-google-map-container {
+        height: 290px;
+    }
+}

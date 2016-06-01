@@ -1,0 +1,28 @@
+﻿<section class="welcome">
+    <div class="logo">
+        <div><img src="/Images/big-logo.png"></div>
+        <div> <img src="/Images/enter.png"></div>
+        <div style="margin-top:30px;" id="party_avatar1">
+            <a onclick="javascript:scroller('banner', 600);">
+                <img src="/Images/sssssss.png" style="width:auto; width:66px; height: 66px;">
+            </a>
+        </div>
+    </div>
+    <!--logo結束-->
+</section>
+<!--welcome section 結束-->
+<!--輪播 begin-->
+<section class="banner" id="banner">
+    <div class="banner-flickity">
+        <div class="gallery" flickity-component="flickitySettings" play-after-play="true">
+            <div class="gallery-cell" ng-repeat="slider in sliders track by slider.id">
+                <a ng-href="{{slider.link}}" target="_blank">
+                    <!--配合IE在延遲載入下無法正確抓到圖片高度，需加入height auto style-->
+                    <img data-flickity-lazyload="{{slider.image}}" title="{{slider.title}}" alt="{{slider.title}}" style="width: auto;" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--輪播 end-->
+<app-footer></app-footer>
