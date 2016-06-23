@@ -17,6 +17,7 @@ namespace mkindergarten {
             );
 
             //其他預設路由(強制轉向 controller = "Home", action = "Home")
+            //sh讀取Controllers\Home\HomeController.cs
             routes.Add(new SingleRoute());
         }
     }

@@ -10,7 +10,7 @@ namespace mkindergarten.Controllers.Home {
             //ViewBag.Title = getPageTitle();
             ViewBag.Keywords = "萌學園幼兒園,萌學園,萌學園幼稚園";
             ViewBag.Description = "東森電視擁有獨家且豐富的影音資源，將萌學園幼兒園配合學校教學主題。延伸為培養孩子品格、安全、環保之家庭教育，且增進親子關係，為萌學園幼兒園與一般幼兒園差異化的重要特色";
-            return View();
+            return View();      //sh讀取Views\Home\Home.cshtml
         }
 
         #region *** 通用資料要求 ***

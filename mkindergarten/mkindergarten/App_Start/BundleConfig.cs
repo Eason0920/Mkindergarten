@@ -6,6 +6,11 @@ namespace mkindergarten {
         public static void RegisterBundles(BundleCollection bundles) {
 
             bundles.Add(new ScriptBundle("~/Scripts/public").Include(
+                "~/Scripts/jquery.min.js",
+                "~/Scripts/angular.min.js",
+                "~/Scripts/angular-route.js",
+                "~/Scripts/angular-sanitize.js",
+                "~/Scripts/angular-animate.js",
                 "~/Scripts/flickity.pkgd.js",
                 "~/Scripts/jquery.spritely-0.1.js",
                 "~/Scripts/public-tools.js",

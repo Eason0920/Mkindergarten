@@ -18,6 +18,11 @@ app.constant('APP_CONSTANT', {
 app.config(['$routeProvider', '$locationProvider',
     function ($routeProvider, $locationProvider) {
 
+        //$locationProvider.hashPrefix('!');
+
+        //開啟 Html5 模式
+        $locationProvider.html5Mode(true);
+
         //設定路由
         $routeProvider.when('/', {      //首頁
             templateUrl: '/Html/index.html',
@@ -44,9 +49,6 @@ app.config(['$routeProvider', '$locationProvider',
         }).otherwise({      //預設
             redirectTo: '/'
         });
-
-        //開啟 Html5 模式
-        $locationProvider.html5Mode(true);
     }]);
 
 app.run(['$rootScope', 'appService', '$animate', 'tool', '$location', 'APP_CONSTANT', 'ga',
@@ -63,7 +65,11 @@ app.run(['$rootScope', 'appService', '$animate', 'tool', '$location', 'APP_CONST
         //目前的 url 路徑
         $rootScope.currentUrlPath = null;
 
+        //各頁面標題
         $rootScope.pageTitle = null;
+
+        //ajax 是否完成註記
+        $rootScope.bodyAjaxStatus = 'wait';
 
         //#endregion
 
@@ -100,10 +106,19 @@ app.run(['$rootScope', 'appService', '$animate', 'tool', '$location', 'APP_CONST
             });
 
         //路由改變完成事件
-        $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        //$rootScope.$on('$routeChangeStart', function (angularEvent, next, current) {
+
+        //});
+
+        //路由改變完成事件
+        $rootScope.$on('$routeChangeSuccess', function (angularEvent, current, previous) {
 
             //目前 url 路徑
             $rootScope.currentUrlPath = $location.path();
+            
+            //切換頁面後先將 ajax 註記初始化(除了什麼是萌學園、萌學園幼兒園頁面除外，這兩個頁面沒有使用 ajax)
+            $rootScope.bodyAjaxStatus = (($rootScope.currentUrlPath.toLowerCase() != '/intro' &&
+                                          $rootScope.currentUrlPath.toLowerCase() != '/plan') ? 'wait' : 'success');
 
             //移動畫面至頂
             angular.element('html, body').scrollTop(0);

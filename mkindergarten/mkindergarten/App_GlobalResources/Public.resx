@@ -129,4 +129,8 @@
     <value>VImages/head</value>
     <comment>總部前台圖片網站虛擬路徑位置</comment>
   </data>
+  <data name="searchBotParameter" xml:space="preserve">
+    <value>?_escaped_fragment_=</value>
+    <comment>搜尋引擎機器人辨識符號</comment>
+  </data>
 </root>

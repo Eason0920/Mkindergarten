@@ -29,6 +29,7 @@ app.controller('indexCtrl', ['$scope', 'ajax', 'APP_CONSTANT', '$rootScope',
                     if (response.status === 200) {
                         if (response.data.result >= 0) {
                             $scope.sliders = response.data.data;
+                            $rootScope.bodyAjaxStatus = 'success';
                         } else {        //存取資料庫發生錯誤
                             //alert('【取得輪播資訊發生錯誤！】\r\nresult: ' + response.data.result + '\r\nmessage: ' + response.data.message);
                             alert('【取得輪播資訊發生錯誤！】\r\nresult: ' + response.data.result + '\r\nmessage: ' + APP_CONSTANT.SYSTEM_UNKNOWN_ERROR);
@@ -122,6 +123,7 @@ function ($scope, APP_CONSTANT, geoService, $rootScope, appService, $timeout, gM
                 };
 
                 $scope.markers.push(marker);
+                $rootScope.bodyAjaxStatus = 'success';
             }
 
             //若該縣市園所數量只有一間，拉近地圖預設值4級距縮放比例，並將該園所位置移至地圖中心點
@@ -272,6 +274,7 @@ app.controller('recruitCtrl', ['$scope', 'ajax', 'APP_CONSTANT', '$rootScope',
                     if (response.status === 200) {
                         if (response.data.result === 1) {
                             $scope.recruitJobs = response.data.data;
+                            $rootScope.bodyAjaxStatus = 'success';
                         } else if (response.data.result === 0) {
                             alert('【取得招募職務資訊發生錯誤！】\r\nresult: ' + response.data.result + '\r\nmessage: 無招募職務資訊');
                         } else {        //存取資料庫發生錯誤
@@ -322,6 +325,7 @@ app.controller('recruitListCtrl', ['$scope', 'ajax', 'APP_CONSTANT', '$routePara
 
                                 //取得第一筆招募職務名稱(手機版用)
                                 $scope.recruitJobName = $scope.recruitJobCompanys[0].job_kind_name;
+                                $rootScope.bodyAjaxStatus = 'success';
                             }
 
                         } else {        //存取資料庫發生錯誤
